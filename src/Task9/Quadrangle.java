@@ -23,10 +23,6 @@ String color;
     abstract double getLargeDiagonal();
     abstract double getHeight();
     abstract String getColor();
-    abstract double getArea();
-    abstract double getPerimeter();
-
-
 
 }
 

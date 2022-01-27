@@ -17,22 +17,18 @@ public class Square extends Quadrangle implements Figure {
 
     @Override
     public double area() {
-        return a*b;
+        return a * b;
     }
 
     @Override
     public double perimeter() {
-        return 0;
+        return a * 4;
     }
 
-
-    public double getPerimeter() {
-        return a*4;
-    }
 
     @Override
     double getLargeDiagonal() {
-        return Math.sqrt(2*a);
+        return Math.sqrt(2 * a);
     }
 
     @Override
@@ -42,11 +38,7 @@ public class Square extends Quadrangle implements Figure {
 
     @Override
     String getColor() {
-        return null;
+        return super.color;
     }
 
-    @Override
-    double getArea() {
-        return 0;
-    }
 }

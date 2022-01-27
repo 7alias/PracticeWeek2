@@ -25,37 +25,35 @@ public class Parallelogram extends Quadrangle implements Figure {
 
     @Override
     public double area() {
-        return 0;
+        if (a > b) {
+            return a * getHeight();
+        } else return b * getHeight();
     }
 
     @Override
     public double perimeter() {
-        return 0;
+        return a + a + b + b;
     }
 
     @Override
     double getLargeDiagonal() {
-        return 0;
+        if (beta > alpha)
+            return Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)) - 2 * a * b * Math.cos(Math.toRadians(beta)));
+        else return Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)) - 2 * a * b * Math.cos(Math.toRadians(alpha)));
     }
 
     @Override
     double getHeight() {
-        if (a>b){return a;} else return b;
-
+        if (alpha <= beta && a < b) return a * Math.sin(Math.toRadians(alpha));
+        else if (alpha >= beta && a < b) return a * Math.sin(Math.toRadians(beta));
+        else if (alpha <= beta && b < a) return b * Math.sin(Math.toRadians(alpha));
+        else return b * Math.sin(Math.toRadians(beta));
     }
 
     @Override
     String getColor() {
-        return null;
+        return super.color;
     }
 
-    @Override
-    double getArea() {
-        return 0;
-    }
 
-    @Override
-    double getPerimeter() {
-        return a+a+b+b;
-    }
 }
